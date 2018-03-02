@@ -1,0 +1,216 @@
+<!DOCTYPE html><html><!-- InstanceBegin template="/Templates/Teamplate.dwt" codeOutsideHTMLIsLocked="false" -->
+    <head>
+    <script type='text/javascript'>
+		//<![CDATA[
+		var snowmax=100
+		var snowcolor=new Array("#f2f8fa","#eff5f7","#dcedf1","#ffffff")
+		var snowtype=new Array("Times","Arial","Times","Verdana")
+		var snowletter="*"
+		var sinkspeed=0.6
+		var snowmaxsize=30
+		var snowminsize=10
+		// Set 1 for all-over-snowing, set 2 for left-side-snowing
+		// Set 3 for center-snowing, set 4 for right-side-snowing
+		var snowingzone=1
+		// Do not edit below this line
+		var snow=new Array()
+		var marginbottom
+		var marginright
+		var timer
+		var i_snow=0
+		var x_mv=new Array();
+		var crds=new Array();
+		var lftrght=new Array();
+		var browserinfos=navigator.userAgent
+		var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+		var ns6=document.getElementById&&!document.all
+		var opera=browserinfos.match(/Opera/)
+		var browserok=ie5||ns6||opera
+		function randommaker(range) {
+			rand=Math.floor(range*Math.random())
+			return rand
+		}
+		 
+		
+		function initsnow() {
+			if (ie5 || opera) {
+				marginbottom = document.body.scrollHeight
+				marginright = document.body.clientWidth-15
+			}
+			else if (ns6) {
+				marginbottom = document.body.scrollHeight
+				marginright = window.innerWidth-15
+			}
+			var snowsizerange=snowmaxsize-snowminsize
+			for (i=0;i<=snowmax;i++) {
+				crds[i] = 0;
+				lftrght[i] = Math.random()*15;
+				x_mv[i] = 0.03 + Math.random()/10;
+				snow[i]=document.getElementById("s"+i)
+				snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+				snow[i].size=randommaker(snowsizerange)+snowminsize
+				snow[i].style.fontSize=snow[i].size+'px';
+				snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+				snow[i].style.zIndex=1000
+				snow[i].sink=sinkspeed*snow[i].size/5
+				if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+				if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+				if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+				if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+				snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+				snow[i].style.left=snow[i].posx+'px';
+				snow[i].style.top=snow[i].posy+'px';
+			}
+			movesnow()
+		}
+
+		function movesnow() {
+			for (i=0;i<=snowmax;i++) {
+				crds[i] += x_mv[i];
+				snow[i].posy+=snow[i].sink
+				snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i])+'px';
+				snow[i].style.top=snow[i].posy+'px';
+				if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+				if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+				if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+				if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+				if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+				snow[i].posy=0
+			}
+		}
+		var timer=setTimeout("movesnow()",50)
+		}
+		for (i=0;i<=snowmax;i++) {
+			document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+		}
+		if (browserok) {
+			window.onload=initsnow
+		}
+		//]]>
+	</script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- InstanceBeginEditable name="doctitle" -->
+        <title>Liên hệ</title>
+        <!-- InstanceEndEditable -->
+        <link rel="stylesheet" type="text/css" href="css/css.css">
+        <!-- InstanceBeginEditable name="head" -->
+        <!-- InstanceEndEditable -->
+    </head>
+    <body onload ="Load()">
+        <div id = "wapper">
+        	<img src="images/background0.jpg" id="LoadImg">
+        	<div id="header">
+            	<h1>THANH HUY</h1>
+                <p><i>Studio</i></p>
+                <div id="block_box">
+                    <input type="image" src="images/iconc.png">
+                    <a href ="https://www.facebook.com/haule.leconghau"><input type="image" src="images/iconfb.png"></a>
+                    <a href ="https://plus.google.com/u/0/"><input type="image" src="images/icong+.png"></a>
+                    <a href ="https://twitter.com/"><input type="image" src="images/icontw.png"></a>
+                </div>
+            </div>
+        	<!-- InstanceBeginEditable name="EditRegion1" -->
+            <div id="content">
+            	 <div id="box">
+                    <div id="left">
+                    	<h3> MỌI THẮC MẮC VỀ DỊCH VỤ CỦA CHÚNG TÔI<BR> ***Vui lòng gửi phản hồi về cho chúng tôi***</h3>
+                        <form name = "formTT">
+                            <table>
+                                <tr>
+                                    <td class="col1">Họ và Tên: </td>
+                                    <td class="col2"><input type="text" name="txtName" placeholder="Họ và Tên"></td>
+                                </tr>
+                                <tr>
+                                    <td class="col1">Địa chỉ: </td>
+                                    <td class="col5">
+										<select name="diaChi"  value="">
+											<option>Thành phố/Tỉnh</option>
+											<option>TP.HCM</option>
+											<option>Hà Nội</option>
+											<option>Đà Nẵng</option>
+											<option>Cần Thơ</option>
+											<option>Cà Mau</option>
+											<option>An Giang</option>
+											<option>Tiền Giang</option>
+											<option>Long An</option>
+											<option>Đồng Nai</option>
+											<option>Huế</option>
+											<option>Hải Phòng</option>
+											<option>Vinh</option>
+										</select>
+									</td>
+									
+                                </tr>
+                                <tr>
+                                    <td class="col1">Số điện thoại: </td>
+                                    <td class="col2"><input type="text" name="txtPhone" placeholder="Số Điện Thoại"></td>
+                                </tr>
+                                <tr>
+                                    <td class="col1">Email: </td>
+                                    <td class="col2"><input type="text" name="txtMail" placeholder="Địa Chỉ Email"></td>
+                                </tr>
+                                <tr>
+                                    <td class="col1">Đặt câu hỏi: </td>
+                                    <td><textarea name="cauhoi" rows="5" cols="60" placeholder="Câu hỏi"></textarea></td>
+                                </tr>
+                                <tr>
+                                	<td></td>
+                                	<td id="col2"><input type="button" value="Send" onClick="fValid();"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div id="right">
+                    	<h3>***LIÊN HỆ ĐẶT LỊCH CHỤP HÌNH***<br>THANH HUY STUDIO</h3>
+                        <p>
+                        * Đăng ký oline: <a href="Dangky.html">Tại đây</a><br>
+                        *Chi nhánh Kiên Giang: Số 121, QL63, Ấp Đập Đá 1, Vĩnh Phong, Vĩnh Thuận, Kiên Giang.<br>
+                        Phone: 043.990 57 58<br>
+                        Hotline: 091.493 7887<br>
+                        Website:<a href="http://www.thanhhuystudio.com.vn/">http://www.thanhhuystudio.com.vn</a><br>
+                        *Chi nhánh TPHCM: Số 588/C2, Cách mạng tháng 8, Phường 11, Quận 3, TP.Hồ Chí Minh. <br>
+                        Phone: 083.8866 887<br>
+                        Hotline: 0912.797 887<br>
+                        Website:<a href="http://www.thanhhuystudio.com.vn/">http://www.thanhhuystudio.com.vn</a><br>
+                        <h6>***THANH HUY STUDIO***<br>***Hân hạnh phục vụ quý khách***</h6>
+              		</div>
+               </div>
+              
+            </div>
+            <!-- InstanceEndEditable -->
+        	<div id="menu">
+            	<ul>
+                	<li id="left"></li>
+                    <li><a href="index.html">TRANG CHỦ</a></li>
+                    <li><a href="GioiThieu.html">GIỚI THIỆU</a></li>
+                    <li><a href="Album.html">ALBUM</a></li>
+                    <li><a href="UuDai.html">ƯU ĐÃI</a></li>
+                    <li><a href="LienHe.html">LIÊN HỆ</a></li>
+                    <li id="right"></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+<!-- InstanceEnd --></html>
+<script>
+	var w=(screen.availWidth -20) + "px";
+	var h=(screen.availHeight -90)+ "px";
+	document.getElementById("wapper").style.width = w;
+	document.getElementById("wapper").style.height = h;
+</script>
+<script src="js/Validate.js"></script>
+<script>
+    	var dem = 0;
+		var x = document.getElementById("LoadImg");
+		var t;
+		function Load(){
+			t = setInterval(Run,2500);
+		}
+		function Run(){
+				x.src="images/background" + dem + ".jpg";
+				dem++;
+					if(dem >= 12){
+						dem = 0;
+					}
+		}
+</script>

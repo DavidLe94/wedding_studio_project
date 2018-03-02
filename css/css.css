@@ -1,0 +1,324 @@
+*{margin:auto;}
+/*đây là phần định dạng trang chủ*/
+#wapper{
+	position:relative;
+	width:100%;
+	height:100%;
+	}
+#wapper>img{
+	position:absolute;
+	float:left;
+	width:100%;
+	height:100%;
+	}
+#header{
+	position:relative;
+	width:100%;
+	height:15%;
+	}
+#header h1{
+	position:absolute;
+	font-size:50PX;
+	margin-top:20px;
+	margin-left:100px;
+	text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+	}
+#header p{
+	position:absolute;
+	font-size:40PX;
+	margin-top:70px;
+	margin-left:200px;
+	text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+	font-weight:bold;
+	font-family:VNI-Thufap3;
+	}
+#header #block_box{
+	position:relative;
+	width:4%;
+	height:200%;
+	margin-left:96%;
+	background:#CCC;
+	opacity:0.2;
+	border-radius:20px 0px 0px 20px;
+	}
+#header #block_box:hover{
+	opacity:1;
+	}
+#header input{
+	position:relative;
+	margin-left:20%;
+	width:57%;
+	height:15%;
+	margin-top:25%;
+	border-radius:30px;
+	}
+#content{
+	width:100%;
+	height:70%;
+	}
+#menu{
+	width:100%;
+	height:15%;
+		}
+#menu li{
+	width:11.4%;
+	height:95px;
+	line-height:95px;
+	float:left;
+	display:block;
+	background:#000;
+	opacity:0.7;
+	text-align:center;
+	font-weight:bold;
+	}
+#menu li:hover{
+	background:#999;
+	}
+#menu li#left{
+	margin-left:-40px;
+	width:23%;
+	float:left;
+	background:#000;
+	border-radius:100px 0px 0px 100px;
+	}
+#menu li#right{
+	width:23%;
+	float:left;
+	background:#000;
+	border-radius:0px 100px 100px 0px;
+	}
+#menu li a{
+	text-decoration:none;
+	color:#000;
+	text-shadow:1px 1px 3px #666,-1px -1px 3px #FFF, 1px 1px 3px #666,-1px -1px 3px #FFF;
+	}
+#menu li a:hover{
+	color:#00F;
+	}
+/*đây là phần định dạng album*/
+#content #box{
+	width:80%;
+	height:65%;
+	background:#666;
+	position:absolute;
+	margin-top:15px;
+	margin-left:10%;
+	opacity:0.95;
+	}
+.product{
+	width:22%;
+	height:45%;
+	float:left;
+	margin-top:15px;
+	margin-left:25px;
+	}
+#content #box .product img{
+	width:99%;
+	height:99%;
+	opacity:0.9;
+	-webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    transition: width 2s, height 2s, transform 2s;
+	}
+#content #box .product img:hover{
+	opacity:1;
+    -webkit-transform: rotate(360deg); /* Safari */
+    transform: rotate(360deg);
+	border: thin solid #FFF;
+	}
+
+/*đây là phần định dạng trang giới thiệu*/
+#content #box>input{
+	position:relative;
+	margin-left:50px;
+	}
+#box #images{
+	width:30%;
+	height:100%;
+	float:left;
+	}
+#box #images>img{
+	width:90%;
+	height:90%;
+	margin-left:5%;
+	margin-top:5%;
+	}
+#text{
+	width:70%;
+	height:100%;
+	float:left;
+	}
+#text h2{
+	margin-top:10px;
+	margin-left:10px;
+	text-align:left;
+	font-size:35px;
+	color:#FFF;
+	}
+#content #box #text>p{
+	margin-left:10px;
+	margin-right:10px;
+	text-align:justify;
+	margin-top:10px;
+	color:#CCC;
+	}
+#content #box #text p a{
+	text-decoration:none;
+	font-weight:bold;
+	color:#000;
+	}
+#content #box #text>h6{
+	text-align:center;
+	font-size:15px;
+	color:#F00;
+	margin-top:10px;
+	}
+
+/*đây là phân định dạng trang liên hệ*/
+#content #box{
+	position:relative;
+	width:80%;
+	height:65%;
+	position:absolute;
+	margin-top:15px;
+	margin-left:10%;
+	opacity:0.9;
+}
+#box #left{
+	width:70%;
+	height:100%;
+	float:left;
+	}
+#box #left form{
+	width:80%;
+	height:80%;
+	margin-top:20px;
+	}
+form table{
+	width:100%;
+	height:100%;
+	}
+.col2{
+	width:90%;
+	height:15%;
+	}
+#col2>input{
+	width:20%;
+	height:100%;
+	}
+td>input{
+	width:70%;
+	height:85%;
+		}
+.col1{
+	width:20%;
+	text-align:right;
+	font-weight:bold;
+	}
+.col5 select{
+	width:30%;
+	height:100%;
+	}
+h3{
+	text-align:center;
+	}
+#box #right{
+	width:30%;
+	height:100%;
+	float:left;
+	}
+#content #box #right>h3{
+	color:#930;
+	font-size:15px;
+	margin-top:10px;
+	}
+#content #box #right>p{
+	text-align:left;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:40px;
+	color:#CCC;
+	}
+#content #box #right p>a{
+	text-decoration:none;
+	color:#00F;
+	}
+#content #box #right>h6{
+	text-align:center;
+	margin-top:10px;
+	font-size:15px;
+	}
+/*đây là phần định dạng trang ưu đãi*/
+h3{
+	text-align:center;
+	margin-top:10px;
+	color:#900;
+	}
+h5{
+	text-align:center;
+	margin-top:10px;
+	color:#FFF;
+	}
+
+#box>p{
+	margin-left:50px;
+	margin-right:20px;
+	text-align:left;
+	color:#CCC;
+	}
+
+/*đây là phần định dạng trang chi tiết*/
+#box>img{
+	width:65%;
+	height:90%;
+	margin-left:6%;
+	margin-top:2%;
+	}
+#content #box>input{
+	position:relative;
+	width:50px;
+	height:50px;
+	border-radius:25px;
+	margin-left:6.5%;
+	margin-bottom:15%;
+	opacity:0.2;
+	}
+#content #box input:hover{
+	opacity:1;
+	}
+
+/*đây là phần định dạng trang đăng ký*/
+#dangky{
+	position:absolute;
+	width:60%;
+	height:65%;
+	margin-left:19%;
+	margin-top:1.5%;
+	opacity:0.95;
+	background:#666;
+}
+#dangky h2{
+	margin-left:5%;
+	margin-top:2%;
+	margin-bottom:1%;
+	font-size:30px;
+}
+#dangky form .col1{
+	width:30%;
+}
+#dangky form .col2{
+	width:70%;
+}
+#dangky input[type="text"]{
+	height:25px;
+}
+#dangky select{
+	height:25px;
+}
+#dangky input[type="button"]{
+	width:80px;
+	height:25px;
+}
+.col3>input{
+	width:150px;
+	height:25px;
+	}
